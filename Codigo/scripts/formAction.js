@@ -26,9 +26,10 @@ window.onload = function () {
     const form = document.getElementsByTagName("form");
     const inputs = form[0].getElementsByTagName("input");
     const selects = form[0].getElementsByTagName("select");
+    const labels = form[0].getElementsByTagName("label");
+    
     for (let input of inputs) {
         input.onfocus = resaltarDesresaltar;
-
         input.addEventListener('blur', resaltarDesresaltar);
     }
 
@@ -52,6 +53,10 @@ function llenarNacionalidad() {
 }
 
 function resaltar(evento) {
+    const label = document.querySelector(`label[for="${evento.target.id}"]`);
+    if (label) {
+        label.classList.toggle("label-selected");
+    }
     evento.target.classList.add("selected");
 }
 
@@ -63,5 +68,9 @@ function noResaltar(evento) {
 }
 
 function resaltarDesresaltar(evento) {
+    const label = document.querySelector(`label[for="${evento.target.id}"]`);
+    if (label) {
+        label.classList.toggle("label-selected");
+    }
     evento.target.classList.toggle("selected");
 }

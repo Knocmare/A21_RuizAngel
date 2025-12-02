@@ -153,3 +153,8 @@ header .match-name {
     outline-color: #f05d71;
     outline-width: 2px;
 }
+
+.label-selected {
+    color: #f05d71;
+    font-weight: bold;
+}
